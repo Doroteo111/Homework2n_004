@@ -19,27 +19,32 @@ public class EventsGameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            OnEnterKeyPressed();
+            if(OnEnterKeyPressed != null)
+            {
+                OnEnterKeyPressed();
+            }
+           
         }
 
-        /*if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OnEscapeKeyPressed();
-        }*/
+            if (OnEnterKeyPressed != null)
+            {
+                OnEscapeKeyPressed();
+            }
+        }
     }
 
     //OnEnterKeyPressed the corresponding functions so that
     //The enemy stops
-    //The player changes its color to green
     //The text shows the player's distance to the enemy at that moment
-    //The particle system starts playing
+   
 
     
 
     //OnEscapeKeyPressed the corresponding functions so that
     //The enemy moves again
-    //The player changes its color to its original color
     //The text shows the default message
-    //The particle system stops playing
+    
 
 }

@@ -39,33 +39,25 @@ public class EventsPlayerController : MonoBehaviour
         return Vector3.Distance(transform.position, enemy.position);
     }
 
-    //color enable and disable code-----------
+    //color enable and disable code----------- DONE
     #region COLOR  
-    private void OnEnableColorGreen()
+    private void OnEnable()
     {
         EventsGameManager.OnEnterKeyPressed += ChangeColorToGreen;
+        EventsGameManager.OnEscapeKeyPressed += ChangeColorToOriginal;
     }
-    private void OnDisableColorGreen()
+    private void OnDisable()
     {
         EventsGameManager.OnEnterKeyPressed -= ChangeColorToGreen;
+        EventsGameManager.OnEscapeKeyPressed += ChangeColorToOriginal;
     }
     private void ChangeColorToGreen()
     {
         spriteRenderer.color = myGreen;
     }
-    //-----------------------
     private void ChangeColorToOriginal()
     {
         spriteRenderer.color = originalColor;
-    }
-
-    private void OnEnableColorOriginal()
-    {
-        EventsGameManager.OnEscapeKeyPressed += ChangeColorToOriginal;
-    }
-    private void OnDisableColorOriginal()
-    {
-        EventsGameManager.OnEscapeKeyPressed -= ChangeColorToOriginal;
     }
     #endregion
 }
