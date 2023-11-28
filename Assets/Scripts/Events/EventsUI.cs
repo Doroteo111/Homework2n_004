@@ -25,4 +25,16 @@ public class EventsUI : MonoBehaviour
         float distance = EventsPlayerController.Instance.DistanceToEnemy();
         distanceText.text = distance.ToString("F2");
     }
+
+    private void OnEnable()
+    {
+        EventsGameManager.OnEnterKeyPressed += UpdateText;
+        EventsGameManager.OnEscapeKeyPressed += InitializeText;
+       
+    }
+    private void OnDisable()
+    {
+        EventsGameManager.OnEnterKeyPressed -= UpdateText;
+        EventsGameManager.OnEscapeKeyPressed-= InitializeText;
+    }
 }

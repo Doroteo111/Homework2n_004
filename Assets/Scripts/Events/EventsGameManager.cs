@@ -15,9 +15,9 @@ public class EventsGameManager : MonoBehaviour
     public delegate void OnEscapeKey();
     public static event OnEscapeKey OnEscapeKeyPressed;
 
-    private void Update()
+    private void Update() //calculate when the input is press
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return)) 
         {
             if(OnEnterKeyPressed != null)
             {
@@ -36,14 +36,14 @@ public class EventsGameManager : MonoBehaviour
     }
 
     //OnEnterKeyPressed the corresponding functions so that
-    //The enemy stops
+    
     //The text shows the player's distance to the enemy at that moment
    
 
     
 
     //OnEscapeKeyPressed the corresponding functions so that
-    //The enemy moves again
+    
     //The text shows the default message
     
 

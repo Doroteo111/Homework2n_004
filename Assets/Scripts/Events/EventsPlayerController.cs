@@ -49,7 +49,7 @@ public class EventsPlayerController : MonoBehaviour
     private void OnDisable()
     {
         EventsGameManager.OnEnterKeyPressed -= ChangeColorToGreen;
-        EventsGameManager.OnEscapeKeyPressed += ChangeColorToOriginal;
+        EventsGameManager.OnEscapeKeyPressed -= ChangeColorToOriginal;
     }
     private void ChangeColorToGreen()
     {

@@ -57,6 +57,8 @@ public class EventsEnemy : MonoBehaviour
         return Vector2.Distance(pos, Vector2.zero) > minDistanceFromOrigin;
     }
 
+    //movment enable and disable code----------- DONE
+    #region MOVMENT
     private void StopMovement()
     {
         canMove = false;
@@ -66,4 +68,16 @@ public class EventsEnemy : MonoBehaviour
     {
         canMove = true;
     }
+
+    private void OnEnable()
+    {
+        EventsGameManager.OnEnterKeyPressed += StopMovement;
+        EventsGameManager.OnEscapeKeyPressed += RestartMovement;
+    }
+    private void OnDisable()
+    {
+        EventsGameManager.OnEnterKeyPressed -= StopMovement;
+        EventsGameManager.OnEscapeKeyPressed += RestartMovement;
+    }
+    #endregion
 }
